@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { capitalize, reverseString } from './tdd';
+import { capitalize, reverseString, calculator } from './tdd';
 
 describe('capitalize', () => {
   test('all lowercase string', () => {
@@ -35,5 +35,27 @@ describe('reverse', () => {
 
   test('an empty string', () => {
     expect(reverseString('')).toMatch(/^$/);
+  });
+});
+
+describe('calculator', () => {
+  test('adds two numbers', () => {
+    expect(calculator.add(1, 2)).toEqual(3);
+  });
+
+  test('subtracts two numbers', () => {
+    expect(calculator.subtract(7, 1)).toEqual(6);
+  });
+
+  test('divides two numbers', () => {
+    expect(calculator.divide(36, 4)).toEqual(9);
+  });
+
+  test('throws an error when dividing by zero', () => {
+    expect(() => calculator.divide(16, 0)).toThrow(/^Cannot divide by zero!$/);
+  });
+
+  test('multiplies two numbers', () => {
+    expect(calculator.multiply(4, 3)).toEqual(12);
   });
 });
