@@ -43,3 +43,25 @@ export function caesarCipher(input, offset) {
     })
     .join('');
 }
+
+export function analyzeArray(arr) {
+  let minimum = Infinity;
+  let maximum = -Infinity;
+  let sum = 0;
+
+  for (const num of arr) {
+    if (num < minimum) minimum = num;
+    if (num > maximum) maximum = num;
+
+    sum += num;
+  }
+
+  const average = sum / arr.length;
+
+  return {
+    average,
+    minimum,
+    maximum,
+    length: arr.length,
+  };
+}
