@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { capitalize, reverseString, calculator } from './tdd';
+import { capitalize, reverseString, calculator, caesarCipher } from './tdd';
 
 describe('capitalize', () => {
   test('all lowercase string', () => {
@@ -57,5 +57,23 @@ describe('calculator', () => {
 
   test('multiplies two numbers', () => {
     expect(calculator.multiply(4, 3)).toEqual(12);
+  });
+});
+
+describe('caesar cipher', () => {
+  test('shifts characters', () => {
+    expect(caesarCipher('abc', 5)).toMatch(/^fgh$/);
+  });
+
+  test('wraps properly', () => {
+    expect(caesarCipher('z', 1)).toMatch(/^a$/);
+  });
+
+  test('keeps the same case', () => {
+    expect(caesarCipher('ABab', 2)).toMatch(/^CDcd$/);
+  });
+
+  test('preserves punctuation', () => {
+    expect(caesarCipher('Hello, hello.', 1)).toMatch(/^Olssv, olssv.$/);
   });
 });
