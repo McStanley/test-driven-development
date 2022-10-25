@@ -1,0 +1,20 @@
+{
+  "name": "test-driven-development",
+  "version": "1.0.0",
+  "description": "Test Driven Development practice using Jest.",
+  "main": "tdd.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McStanley/test-driven-development.git"
+  },
+  "author": "Stanisław Olejniczak <0stanislawolejniczak0@gmail.com> (https://github.com/McStanley)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McStanley/test-driven-development/issues"
+  },
+  "homepage": "https://github.com/McStanley/test-driven-development#readme"
+}
