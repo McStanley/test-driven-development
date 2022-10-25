@@ -23,3 +23,23 @@ export const calculator = {
     return a * b;
   },
 };
+
+export function caesarCipher(input, offset) {
+  return input
+    .split('')
+    .map((char) => {
+      if (!/^[A-Za-z]$/.test(char)) {
+        return char;
+      }
+
+      let charCode = char.charCodeAt(0) + offset;
+      const maxCode = /^[A-Z]$/.test(char) ? 90 : 122;
+
+      while (charCode > maxCode) {
+        charCode -= 26;
+      }
+
+      return String.fromCharCode(charCode);
+    })
+    .join('');
+}
