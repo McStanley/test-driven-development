@@ -1,5 +1,7 @@
 /* eslint-env jest */
 
+import { capitalize } from './tdd';
+
 describe('capitalize', () => {
   test('all lowercase string', () => {
     expect(capitalize('lowercase')).toMatch(/^Lowercase$/);
