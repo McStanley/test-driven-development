@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { capitalize } from './tdd';
+import { capitalize, reverseString } from './tdd';
 
 describe('capitalize', () => {
   test('all lowercase string', () => {
