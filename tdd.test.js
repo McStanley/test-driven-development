@@ -1,6 +1,12 @@
 /* eslint-env jest */
 
-import { capitalize, reverseString, calculator, caesarCipher } from './tdd';
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+} from './tdd';
 
 describe('capitalize', () => {
   test('all lowercase string', () => {
@@ -75,5 +81,27 @@ describe('caesar cipher', () => {
 
   test('preserves punctuation', () => {
     expect(caesarCipher('Hello, hello.', 7)).toMatch(/^Olssv, olssv.$/);
+  });
+});
+
+describe('analyze array', () => {
+  test('calculates the average value', () => {
+    const object = analyzeArray([3, 5, 7, 9]);
+    expect(object.average).toEqual(6);
+  });
+
+  test('finds the minimum value', () => {
+    const object = analyzeArray([7, 2, 3]);
+    expect(object.minimum).toEqual(2);
+  });
+
+  test('finds the maximum value', () => {
+    const object = analyzeArray([11, 3, 50, 4, 18]);
+    expect(object.maximum).toEqual(50);
+  });
+
+  test('returns the array length', () => {
+    const object = analyzeArray([11, 3, 50, 4, 2, 1, 100]);
+    expect(object.length).toEqual(7);
   });
 });
