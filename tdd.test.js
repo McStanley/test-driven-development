@@ -74,6 +74,6 @@ describe('caesar cipher', () => {
   });
 
   test('preserves punctuation', () => {
-    expect(caesarCipher('Hello, hello.', 1)).toMatch(/^Olssv, olssv.$/);
+    expect(caesarCipher('Hello, hello.', 7)).toMatch(/^Olssv, olssv.$/);
   });
 });
